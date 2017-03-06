@@ -24,10 +24,10 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
         "db" => [
-            "host" => $server,
-            "dbname" => $db,
-            "user" => $username,
-            "pass" => $password
+            "host" => "$server",
+            "dbname" => "$db",
+            "user" => "$username",
+            "pass" => "$password"
         ],
     ],
 ];
