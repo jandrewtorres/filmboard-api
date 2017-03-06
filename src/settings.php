@@ -1,4 +1,13 @@
 <?php
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
 return [
     'settings' => [
         'displayErrorDetails' => true, // set to false in production
@@ -16,10 +25,10 @@ return [
             'level' => \Monolog\Logger::DEBUG,
         ],
         "db" => [
-            "host" => "localhost",
-            "dbname" => "film_board_db",
-            "user" => "root",
-            "pass" => "Andr3w135246"
+            "host" => $server,
+            "dbname" => $db,
+            "user" => $username,
+            "pass" => $password
         ],
     ],
 ];
