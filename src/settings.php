@@ -2,15 +2,15 @@
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-//$server = $url["host"];
-//$username = $url["user"];
-//$password = $url["pass"];
-//$db = substr($url["path"], 1);
-
 $server = "localhost";
 $dbname = "film_board_db";
 $username = "root";
 $password = "Andr3w135246";
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
 return [
     'settings' => [
