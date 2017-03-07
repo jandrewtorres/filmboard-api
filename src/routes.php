@@ -3,6 +3,10 @@
 
 // EX gets horror names
 
+$app->get('/', function ($request, $response, $args) {
+   echo "hello";
+});
+
 $app->get('/{catname}', function ($request, $response, $args) {
    $catname = $request->getAttribute('catname');
    $sql = "SELECT * FROM $catname ORDER BY name";
