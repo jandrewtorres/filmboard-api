@@ -3,15 +3,6 @@
 
 // EX gets horror names
 
-
-$app->get('/', function ($request, $response, $args) {
-   $sql = "SELECT * FROM";
-   $stmt = $this->db->prepare($sql);
-   $stmt->execute();
-   $all = $stmt->fetchAll();
-   return $this->response->withJson($all);
-});
-
 $app->get('/{catname}', function ($request, $response, $args) {
    $catname = $request->getAttribute('catname');
    $sql = "SELECT * FROM $catname ORDER BY name";
