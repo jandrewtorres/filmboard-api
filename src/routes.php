@@ -1,12 +1,12 @@
 <?php
 // Routes
 
-// EX gets horror names
-
+// Home Message
 $app->get('/', function ($request, $response, $args) {
-   echo "hello";
+   echo "FilmBoard API";
 });
 
+// GET category entries
 $app->get('/{catname}', function ($request, $response, $args) {
    $catname = $request->getAttribute('catname');
    $sql = "SELECT * FROM $catname ORDER BY name";
@@ -16,6 +16,7 @@ $app->get('/{catname}', function ($request, $response, $args) {
    return $this->response->withJson($all);
 });
 
+// POST entry to category
 $app->post('/{catname}/add', function($request, $response) {
    $name = $request->getParam('name');
    $catname = $request->getAttribute('catname');
@@ -23,9 +24,10 @@ $app->post('/{catname}/add', function($request, $response) {
    $stmt = $this->db->prepare($sql);
    $stmt->bindParam(':name', $name);
    $stmt->execute();
-   echo '{"notice": {"text": "Customer Added"}}';
+   echo '{"notice": {"text": "added entry to category"}}';
 });
 
+// POST add new category/table, adds category to categories table
 $app->post('/add/{catname}', function($request, $response) {
    $catname = $request->getAttribute('catname');
    $sql = "CREATE TABLE IF NOT EXISTS $catname(

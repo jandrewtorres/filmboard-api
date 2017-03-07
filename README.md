@@ -1,26 +1,15 @@
-# Slim Framework 3 Skeleton Application
+# FilmBoard API
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+PHP/MySql web service built with Slim/Composer and deployed on Heroku.
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+https://filmboard-api.herokuapp.com
 
-## Install the Application
+## API Info
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+### Create Category
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+* URL
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+## To run in development
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-To run the application in development, you can also run this command. 
-
-	php composer.phar start
-
-Run this command to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
+	`php composer.phar start`
