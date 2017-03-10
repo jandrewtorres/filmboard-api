@@ -16,7 +16,11 @@ $app->add(function ($req, $res, $next) {
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   return $this->response->withJson("{}");
+   $sql = "show tables";
+   $stmt = $this->db->prepare($sql);
+   $stmt->execute();
+   $tables = $stmt->fetchAll();
+   return $this->response->withJson($tables);
 });
 
 // GET category entries
