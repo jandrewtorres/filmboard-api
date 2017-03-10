@@ -16,7 +16,7 @@ $app->add(function ($req, $res, $next) {
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   echo "FilmBoard API";
+   return;
 });
 
 // GET category entries
