@@ -16,7 +16,7 @@ $app->add(function ($req, $res, $next) {
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   return $this->response->withJson();
+   return $this->response->withJson("{}");
 });
 
 // GET category entries
