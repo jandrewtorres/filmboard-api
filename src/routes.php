@@ -3,7 +3,8 @@
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   $sql = "SHOW TABLES";
+   $sql = "SELECT TABLE_NAME as table, TABLES.* FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='database_name' GROUP BY table;
+";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $result = $stmt->fetchAll();
