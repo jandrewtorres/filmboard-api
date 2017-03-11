@@ -3,7 +3,7 @@
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   $sql = "SELECT * FROM information_schema.tables";
+   $sql = "SHOW TABLES";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $result = $stmt->fetchAll();
