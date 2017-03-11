@@ -58,7 +58,7 @@ $app->post('/add/{catname}', function($request, $response) {
 
 $app->delete('/{catname}', function ($request) {
     //Delete book identified by $id
-   $catname = $request->getAttribute('name');
+   $catname = $request->getAttribute('catname');
    $sql = "DROP TABLE IF EXISTS $catname;";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
