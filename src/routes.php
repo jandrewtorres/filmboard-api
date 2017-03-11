@@ -3,7 +3,7 @@
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   $sql = "SHOW TABLES FROM *";
+   $sql = "SHOW TABLES";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $all = $stmt->fetchAll();
