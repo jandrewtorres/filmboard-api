@@ -13,7 +13,8 @@ $app->get('/', function ($request, $response, $args) {
       $stmt2 = $this->db->prepare($sql);
       $stmt2->execute();
       $res = $stmt2->fetchAll();
-      $tableNames[$clean_name] = $clean_name;
+      $tableNames['name'] = $clean_name;
+      $tableNames['movies'] = $res;
    }
    return $this->response->withJson($tableNames);
 });
