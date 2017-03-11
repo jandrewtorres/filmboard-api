@@ -7,10 +7,14 @@ $app->get('/', function ($request, $response, $args) {
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $result = $stmt->fetchAll();
-   $arrayCount = 0;
    foreach($result as $t_name) {
-      $tableNames[$arrayCount] = $t_name['Tables_in_heroku_05056c3a834e8cd'];
-      $arrayCount++;
+      $clean_name = $t_name['Tables_in_heroku_05056c3a834e8cd'];
+      $sql = "SELECT * FROM $clean_name"
+      $stmt2 = $this->db->prepare($sql);
+      $stmt2->execute();
+      $res = $stmt2->fetchAll();
+      $tableNames[$clean_name]['name'] = $clean_name;
+      $tableNames[$clean_name]['movies'] = $res;
    }
    return $this->response->withJson($tableNames);
 });
