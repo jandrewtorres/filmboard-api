@@ -32,7 +32,7 @@ $app->get('/{catname}', function ($request, $response, $args) {
 });
 
 // POST entry to category
-$app->post('/{catname}/add/{name}', function($request, $response) {
+$app->post('/{catname}/add/', function($request, $response) {
    $name = $request->getParam('name');
    $catname = $request->getAttribute('catname');
    $sql = "INSERT INTO $catname (name) VALUES (:name)";
