@@ -52,14 +52,6 @@ $app->post('/add/{catname}', function($request, $response) {
        ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
-   try {
-      $sql = "INSERT INTO categories (category) VALUES (:category)";
-      $stmt2 = $this->db->prepare($sql);
-      $stmt2->bindParam(':category', $catname);
-      $stmt2->execute();
-   }
-   catch(Exception $e) {
-      echo 'Message: ' .$e->getMessage();
-   }
+
    echo '{"notice": {"text": "Table added"}}';
 });
