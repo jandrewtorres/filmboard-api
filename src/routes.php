@@ -56,7 +56,7 @@ $app->post('/add/{catname}', function($request, $response) {
    echo '{"notice": {"text": "Table added"}}';
 });
 
-$app->delete('/:catname/delete', function ($catname) {
+$app->delete('/:catname', function ($catname) {
     //Delete book identified by $id
    $sql = "DROP TABLE IF EXISTS $catname;";
    $stmt = $this->db->prepare($sql);
