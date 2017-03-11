@@ -1,17 +1,4 @@
 <?php
-//CORS
-
-$app->options('/{routes:.+}', function ($request, $response, $args) {
-    return $response;
-});
-
-$app->add(function ($req, $res, $next) {
-    $response = $next($req, $res);
-    return $response
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-});
 
 // ROUTES
 
@@ -25,7 +12,7 @@ $app->get('/', function ($request, $response, $args) {
 });
 
 // GET category entries
-$app->get('/{catname}', function ($request, $response, $args) {
+$app->get('/{catname}', /CorsSlim/CorsSlim::routMiddleware(), function ($request, $response, $args) {
    $catname = $request->getAttribute('catname');
    $sql = "SELECT * FROM $catname ORDER BY name";
    $stmt = $this->db->prepare($sql);
