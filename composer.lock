@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebd2a90cfea7cc9ffc370a2df1868d64",
+    "content-hash": "ac66f71e2b95fc034d265e33dc8bb36c",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -157,53 +157,6 @@
                 "routing"
             ],
             "time": "2017-01-19T11:35:12+00:00"
-        },
-        {
-            "name": "palanik/corsslim",
-            "version": "dev-slim3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/palanik/CorsSlim.git",
-                "reference": "e84cb944ca73aace3ea92f6ec0b68de1619eea62"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/palanik/CorsSlim/zipball/e84cb944ca73aace3ea92f6ec0b68de1619eea62",
-                "reference": "e84cb944ca73aace3ea92f6ec0b68de1619eea62",
-                "shasum": ""
-            },
-            "require": {
-                "slim/slim": ">=3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CorsSlim\\": "."
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "palanik"
-                }
-            ],
-            "description": "Cross-origin resource sharing (CORS) middleware for PHP Slim.",
-            "homepage": "https://github.com/palanik/CorsSlim",
-            "keywords": [
-                "cors",
-                "corsslim",
-                "cross-origin",
-                "preflight",
-                "slim",
-                "slimphp"
-            ],
-            "time": "2016-01-15 04:37:35"
         },
         {
             "name": "pimple/pimple",
@@ -1531,16 +1484,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.2.6",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "093e416ad096355149e265ea2e4cc1f9ee40ab1a"
+                "reference": "9724c684646fcb5387d579b4bfaa63ee0b0c64c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/093e416ad096355149e265ea2e4cc1f9ee40ab1a",
-                "reference": "093e416ad096355149e265ea2e4cc1f9ee40ab1a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/9724c684646fcb5387d579b4bfaa63ee0b0c64c8",
+                "reference": "9724c684646fcb5387d579b4bfaa63ee0b0c64c8",
                 "shasum": ""
             },
             "require": {
@@ -1582,7 +1535,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-07T16:47:02+00:00"
+            "time": "2017-02-16T22:46:52+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -1637,9 +1590,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "palanik/corsslim": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

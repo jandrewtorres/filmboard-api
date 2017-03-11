@@ -1,14 +1,9 @@
 <?php
-
-// ROUTES
+// Routes
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   $sql = "show tables";
-   $stmt = $this->db->prepare($sql);
-   $stmt->execute();
-   $tables = $stmt->fetchAll();
-   return $this->response->withJson($tables);
+   echo "FilmBoard API";
 });
 
 // GET category entries

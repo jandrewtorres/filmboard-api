@@ -28,6 +28,5 @@ return [
             "user" => $username,
             "pass" => $password
         ],
-        "determineRouteBeforeAppMiddleware" => true,
     ],
 ];
