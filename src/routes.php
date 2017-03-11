@@ -9,7 +9,7 @@ $app->get('/', function ($request, $response, $args) {
    $result = $stmt->fetchAll();
    $arrayCount = 0;
    foreach($result as $t_name) {
-      $tableNames[$arrayCount] = $t_name[0];
+      $tableNames[$arrayCount] = $t_name;
       $arrayCount++;
    }
    return $this->response->withJson($tableNames);
