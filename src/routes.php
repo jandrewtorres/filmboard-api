@@ -7,14 +7,16 @@ $app->get('/', function ($request, $response, $args) {
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $result = $stmt->fetchAll();
+   $number = 0;
    foreach($result as $t_name) {
       $clean_name = $t_name['Tables_in_heroku_05056c3a834e8cd'];
       $sql = "SELECT * FROM $clean_name";
       $stmt2 = $this->db->prepare($sql);
       $stmt2->execute();
       $res = $stmt2->fetchAll();
-      $tableNames['name'] = $clean_name;
-      $tableNames['movies'] = $res;
+      $tableNames[$number]['name'] = $clean_name;
+      $tableNames[$number]['movies'] = $res;
+      $number++;
    }
    return $this->response->withJson($tableNames);
 });
