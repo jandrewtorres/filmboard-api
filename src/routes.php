@@ -12,7 +12,7 @@ $app->get('/', function ($request, $response, $args) {
 });
 
 // GET category entries
-$app->get('/{catname}', /CorsSlim/CorsSlim::routMiddleware(), function ($request, $response, $args) {
+$app->get('/{catname}', function ($request, $response, $args) {
    $catname = $request->getAttribute('catname');
    $sql = "SELECT * FROM $catname ORDER BY name";
    $stmt = $this->db->prepare($sql);
