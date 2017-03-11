@@ -3,7 +3,11 @@
 
 // Home Message
 $app->get('/', function ($request, $response, $args) {
-   echo "FilmBoard API";
+   $sql = "SHOW TABLES FROM $this->db->name";
+   $stmt = $this->db->prepare($sql);
+   $stmt->execute();
+   $all = $stmt->fetchAll();
+   return $this->response->withJson($all);
 });
 
 // GET category entries
