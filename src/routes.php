@@ -7,7 +7,12 @@ $app->get('/', function ($request, $response, $args) {
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $result = $stmt->fetchAll();
-   return $this->response->withJson($result);
+   $arrayCount = 0;
+   foreach($result as $t_name) {
+      $tableNames[$arrayCount] = $t_name[0];
+      $arrayCount++;
+   }
+   return $this->response->withJson($tableNames);
 });
 
 // GET category entries
