@@ -9,7 +9,7 @@ $app->get('/', function ($request, $response, $args) {
    $result = $stmt->fetchAll();
    foreach($result as $t_name) {
       $clean_name = $t_name['Tables_in_heroku_05056c3a834e8cd'];
-      $sql = "SELECT * FROM $clean_name"
+      $sql = "SELECT * FROM $clean_name";
       $stmt2 = $this->db->prepare($sql);
       $stmt2->execute();
       $res = $stmt2->fetchAll();
