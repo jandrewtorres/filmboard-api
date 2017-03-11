@@ -7,7 +7,6 @@ $app->get('/', function ($request, $response, $args) {
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $result = $stmt->fetchAll();
-   echo "$result[0]";
    return $this->response->withJson($result);
 });
 
