@@ -7,19 +7,8 @@ $app->get('/', function ($request, $response, $args) {
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $result = $stmt->fetchAll();
-   $arrayCount = 0;
 
-   foreach ($result as $entry) {
-      $sql = "SELECT * FROM $entry[0]"
-      $stmt = $this->db->prepare($sql);
-      $stmt->execute();
-      $res = $stmt->fetchAll();
-
-      $all[$arrayCount]['name'] = $entry[0];
-      $all[$arrayCount]['movies'] = $res;
-      $arrayCount++;
-   }
-   return $this->response->withJson($all);
+   return $this->response->withJson($result);
 });
 
 // GET category entries
