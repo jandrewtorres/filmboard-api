@@ -45,7 +45,7 @@ $app->post('/{catname}/add/', function($request, $response) {
 // POST add new category/table, adds category to categories table
 $app->post('/add/{catname}', function($request, $response) {
    $catname = $request->getAttribute('catname');
-   $sql = "CREATE TABLE IF NOT EXISTS $catname(
+   $sql = "CREATE TABLE IF NOT EXISTS `$catname` (
         `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
         `name` varchar(100) DEFAULT NULL,
          PRIMARY KEY (`id`)
