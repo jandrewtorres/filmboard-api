@@ -66,7 +66,7 @@ $app->delete('/{catname}', function ($request) {
    echo ("deleted $catname");
 });
 
-$app->options('/{routes:.+}', function ($request, $response, $args) {
+$app->options('/{catname}/{movie}', function ($request, $response, $args) {
     return $response
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
