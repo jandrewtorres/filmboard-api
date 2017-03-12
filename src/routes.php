@@ -66,9 +66,12 @@ $app->delete('/{catname}', function ($request) {
    echo ("deleted $catname");
 });
 
-$app->options('/{catname}/{movie}',
-              function () use ($app) {}
-              );
+$app->options('/{routes:.+}', function ($request, $response, $args) {
+    return $response
+        ->withHeader('Access-Control-Allow-Origin', 'http://mysite')
+        ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+});
 
 $app->delete('/{catname}/{movie}', function ($request) {
     //Delete book identified by $id
