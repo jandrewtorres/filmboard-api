@@ -66,7 +66,7 @@ $app->delete('/{catname}', function ($request) {
    echo ("deleted $catname");
 });
 
-$app->delete('/{catname}/{movie}', function ($request) {
+$app->map(["DELETE", "PATCH"], '/{catname}/{movie}', function ($request) {
     //Delete book identified by $id
    $catname = $request->getAttribute('catname');
    $movie = $request->getAttribute('movie');
