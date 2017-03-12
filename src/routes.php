@@ -10,7 +10,7 @@ $app->get('/', function ($request, $response, $args) {
    $number = 0;
    foreach($result as $t_name) {
       $clean_name = $t_name['Tables_in_heroku_05056c3a834e8cd'];
-      $sql = "SELECT * FROM $clean_name";
+      $sql = "SELECT * FROM `$clean_name`";
       $stmt2 = $this->db->prepare($sql);
       $stmt2->execute();
       $res = $stmt2->fetchAll();
@@ -24,7 +24,7 @@ $app->get('/', function ($request, $response, $args) {
 // GET category entries
 $app->get('/{catname}', function ($request, $response, $args) {
    $catname = $request->getAttribute('catname');
-   $sql = "SELECT * FROM $catname ORDER BY name";
+   $sql = "SELECT * FROM `$catname` ORDER BY `name`";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $all = $stmt->fetchAll();
@@ -35,7 +35,7 @@ $app->get('/{catname}', function ($request, $response, $args) {
 $app->post('/{catname}/add/', function($request, $response) {
    $name = $request->getParam('name');
    $catname = $request->getAttribute('catname');
-   $sql = "INSERT INTO $catname (name) VALUES (:name)";
+   $sql = "INSERT INTO `$catname` (name) VALUES (:name)";
    $stmt = $this->db->prepare($sql);
    $stmt->bindParam(':name', $name);
    $stmt->execute();
@@ -59,7 +59,7 @@ $app->post('/add/{catname}', function($request, $response) {
 $app->delete('/{catname}', function ($request) {
     //Delete book identified by $id
    $catname = $request->getAttribute('catname');
-   $sql = "DROP TABLE IF EXISTS $catname;";
+   $sql = "DROP TABLE IF EXISTS `$catname`;";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
 
@@ -70,7 +70,7 @@ $app->delete('/{catname}/{movie}', function ($request) {
     //Delete book identified by $id
    $catname = $request->getAttribute('catname');
    $movie = $request->getAttribute('movie');
-   $sql = "DELETE FROM $catname WHERE name=$movie;";
+   $sql = "DELETE FROM `$catname` WHERE name=`$movie`;";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
 
