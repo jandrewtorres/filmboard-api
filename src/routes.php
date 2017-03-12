@@ -67,8 +67,7 @@ $app->delete('/{catname}', function ($request) {
 });
 
 $app->options('/{catname}/{movie}',
-   /CorsSlim/CorsSlim::routeMiddleware();
-   function($name) use ($app) {}
+   function($request) use ($app) {}
    );
 
 $app->delete('/{catname}/{movie}', function ($request) {
