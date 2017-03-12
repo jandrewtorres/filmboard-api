@@ -67,8 +67,9 @@ $app->delete('/{catname}', function ($request) {
 });
 
 $app->options('/{catname}/{movie}',
-   function($request) use ($app) {}
-   );
+              \CorsSlim\CorsSlim::routeMiddleware(),
+              function () use ($app) {}
+              );
 
 $app->delete('/{catname}/{movie}', function ($request) {
     //Delete book identified by $id
