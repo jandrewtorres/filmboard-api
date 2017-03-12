@@ -3,7 +3,7 @@
 
 // e.g: $app->add(new \Slim\Csrf\Guard);
 
-$app->options('/{routes:.+}', function ($request, $response, $args) {
+$app->options('/{category}/{name}', function ($request, $response, $args) {
 	$response = $next($request, $response);
     return $response
         ->withHeader('Access-Control-Allow-Origin', '*')
