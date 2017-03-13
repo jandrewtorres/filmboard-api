@@ -24,7 +24,7 @@ $app->get('/', function ($request, $response, $args) {
 // GET category entries
 $app->get('/{catname}', function ($request, $response, $args) {
    $catname = $request->getAttribute('catname');
-   $sql = "SELECT * FROM `$catname` ORDER BY `name`";
+   $sql = "SELECT * FROM `$catname` ORDER BY name";
    $stmt = $this->db->prepare($sql);
    $stmt->execute();
    $all = $stmt->fetchAll();
