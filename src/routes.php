@@ -70,7 +70,7 @@ $app->delete('/{catname}/{movie}', function ($request) {
     //Delete book identified by $id
    $catname = $request->getAttribute('catname');
    $movie = $request->getAttribute('movie');
-   $sql = "DELETE FROM `$catname` WHERE name=`:movie`;";
+   $sql = "DELETE FROM `$catname` WHERE name=`":movie"`;";
    $stmt = $this->db->prepare($sql);
    $stmt->bindParam(':movie', $movie);
    $stmt->execute();
